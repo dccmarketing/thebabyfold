@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package _s
+ * @package thebabyfold
  */
 
 /**
@@ -12,12 +12,12 @@
  * 
  * @uses 	add_theme_support()
  */
-function _s_jetpack_setup() {
+function thebabyfold_jetpack_setup() {
 
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 
-} // _s_jetpack_setup()
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+} // thebabyfold_jetpack_setup()
+add_action( 'after_setup_theme', 'thebabyfold_jetpack_setup' );

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package _s
+ * @package thebabyfold
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,7 +12,7 @@
 
 			?><div class="entry-meta"><?php
 
-				_s_posted_on();
+				thebabyfold_posted_on();
 
 			?></div><!-- .entry-meta --><?php
 
@@ -24,12 +24,12 @@
 
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ), 
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'thebabyfold' ), 
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 	
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'thebabyfold' ),
 				'after'  => '</div>',
 			) );
 
@@ -37,7 +37,7 @@
 
 	<footer class="entry-footer"><?php
 
-		_s_entry_footer();
+		thebabyfold_entry_footer();
 
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package _s
+ * @package thebabyfold
  */
 ?>
 
@@ -18,7 +18,7 @@
 		the_content();
 		
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'thebabyfold' ),
 			'after'  => '</div>',
 		) );
 	
@@ -26,7 +26,7 @@
 
 	<footer class="entry-footer"><?php
 
-		edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( __( 'Edit', 'thebabyfold' ), '<span class="edit-link">', '</span>' );
 	
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package _s
+ * @package thebabyfold
  */
 
 get_header();
@@ -14,7 +14,7 @@ get_header();
 
 			get_template_part( 'content', 'single' );
 
-			_s_post_nav();
+			thebabyfold_post_nav();
 
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() ) {

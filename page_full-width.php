@@ -4,7 +4,7 @@
  * 
  * Description: A full-width template with no sidebar
  *
- * @package _s
+ * @package thebabyfold
  */
 
 get_header(); ?>

@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package _s
+ * @package thebabyfold
  */
 
 /**
@@ -14,14 +14,14 @@
  * 
  * @return 	array
  */
-function _s_page_menu_args( $args ) {
+function thebabyfold_page_menu_args( $args ) {
 
 	$args['show_home'] = true;
 	
 	return $args;
 
-} // _s_page_menu_args()
-add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
+} // thebabyfold_page_menu_args()
+add_filter( 'wp_page_menu_args', 'thebabyfold_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -32,7 +32,7 @@ add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
  * 
  * @return 	array
  */
-function _s_body_classes( $classes ) {
+function thebabyfold_body_classes( $classes ) {
 
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
@@ -43,8 +43,8 @@ function _s_body_classes( $classes ) {
 
 	return $classes;
 
-} // _s_body_classes()
-add_filter( 'body_class', '_s_body_classes' );
+} // thebabyfold_body_classes()
+add_filter( 'body_class', 'thebabyfold_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -59,7 +59,7 @@ add_filter( 'body_class', '_s_body_classes' );
  * 
  * @return 	string 					The filtered title.
  */
-function _s_wp_title( $title, $sep ) {
+function thebabyfold_wp_title( $title, $sep ) {
 
 	if ( is_feed() ) { return $title; }
 
@@ -80,14 +80,14 @@ function _s_wp_title( $title, $sep ) {
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 
-		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'thebabyfold' ), max( $paged, $page ) );
 
 	}
 
 	return $title;
 
-} // _s_wp_title()
-add_filter( 'wp_title', '_s_wp_title', 10, 2 );
+} // thebabyfold_wp_title()
+add_filter( 'wp_title', 'thebabyfold_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -105,7 +105,7 @@ add_filter( 'wp_title', '_s_wp_title', 10, 2 );
  * 
  * @return 	void
  */
-function _s_setup_author() {
+function thebabyfold_setup_author() {
 	
 	global $wp_query;
 
@@ -115,5 +115,5 @@ function _s_setup_author() {
 	
 	}
 
-} // _s_setup_author()
-add_action( 'wp', '_s_setup_author' );
+} // thebabyfold_setup_author()
+add_action( 'wp', 'thebabyfold_setup_author' );

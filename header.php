@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package _s
+ * @package thebabyfold
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,7 +21,7 @@ wp_head();
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'thebabyfold' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
@@ -30,7 +30,7 @@ wp_head();
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></button><?php
+			<button class="menu-toggle"><?php _e( 'Menu', 'thebabyfold' ); ?></button><?php
 
 				wp_nav_menu( array( 'theme_location' => 'primary' ) );
 		

@@ -4,7 +4,7 @@
  * 
  * Description: Page template with sidebar on the right-side
  *
- * @package _s
+ * @package thebabyfold
  */
 
 get_header(); ?>

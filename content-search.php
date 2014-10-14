@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package thebabyfold
  */
 ?>
 
@@ -16,7 +16,7 @@
 		if ( 'post' == get_post_type() ) :
 			?><div class="entry-meta"><?php
 
-				_s_posted_on();
+				thebabyfold_posted_on();
 		
 			?></div><!-- .entry-meta --><?php
 
@@ -32,7 +32,7 @@
 
 	<footer class="entry-footer"><?php
 
-		_s_entry_footer();
+		thebabyfold_entry_footer();
 	
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

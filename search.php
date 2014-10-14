@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package _s
+ * @package thebabyfold
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 			?><header class="page-header">
 				<h1 class="page-title"><?php 
 
-					printf( __( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' );
+					printf( __( 'Search Results for: %s', 'thebabyfold' ), '<span>' . get_search_query() . '</span>' );
 
 				?></h1>
 			</header><!-- .page-header --><?php
@@ -32,7 +32,7 @@ get_header(); ?>
 
 			endwhile;
 
-			_s_paging_nav();
+			thebabyfold_paging_nav();
 
 		else :
 

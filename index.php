@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package thebabyfold
  */
 
 get_header();
@@ -29,7 +29,7 @@ get_header();
 
 			endwhile;
 
-			_s_paging_nav();
+			thebabyfold_paging_nav();
 
 		else :
 

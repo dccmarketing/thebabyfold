@@ -1,6 +1,6 @@
 <?php
 /**
- * @package _s
+ * @package thebabyfold
  */
 ?>
 
@@ -11,7 +11,7 @@
 
 		?><div class="entry-meta"><?php
 	
-			_s_posted_on();
+			thebabyfold_posted_on();
 	
 		?></div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -21,7 +21,7 @@
 		the_content();
 		
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'thebabyfold' ),
 			'after'  => '</div>',
 		) );
 	
@@ -29,7 +29,7 @@
 
 	<footer class="entry-footer"><?php
 
-		_s_entry_footer();
+		thebabyfold_entry_footer();
 	
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->
