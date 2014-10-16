@@ -1,0 +1,28 @@
+.nav-footer {
+
+	@media screen and (min-width: $bp__footer) {
+		display: inline-block;
+	}
+
+	.menu-items {
+		list-style 	: none;
+		margin 		: 0;
+	}
+
+	.menu-item {
+		display: inline-block;
+	}
+
+	.menu-item a,
+	.menu-item a:visited {
+		color 			: $color__text-menu-footer;
+		text-decoration	: none;
+		padding 		: 0.25em $size__pad-footer-items;
+		line-height 	: 1em;
+	}
+
+	.menu-item + .menu-item {
+		border-left: 1px solid $pink;	
+	}
+
+}

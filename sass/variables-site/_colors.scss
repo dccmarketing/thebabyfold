@@ -14,6 +14,7 @@ $color__background-button	: #e6e6e6;
 $color__background-pre		: #eee;
 $color__background-ins		: #fff9c0;
 $color__background-header 	: $pink;
+$color__background-footer 	: $tan;
 
 // Text colors
 $color__text-screen			: #21759b;
@@ -23,6 +24,8 @@ $color__link				: royalblue;
 $color__link-visited		: purple;
 $color__link-hover			: midnightblue;
 $color__text-main			: #404040;
+
+$color__headline-social 	: $light;
 
 // Border colors
 $color__border-button		: #ccc #ccc #bbb;
@@ -38,6 +41,7 @@ $color__bg-menu-item-mobile		: $yellow;
 $color__bg-menu-item			: $pink;
 $color__bg-menu-item-hover 		: $pink;
 $color__bg-menu-current			: $pink;
+$color__bg-menu-social 			: $pink;
 $color__text-menu-mobile		: $pink;
 $color__text-menu				: $pink;
 $color__text-menu-hover			: $yellow;
@@ -47,4 +51,5 @@ $color__text-menu-current-hover	: $light;
 $color__text-submenu			: $pink;
 
 $color__text-menu-headers 		: $light;
+$color__text-menu-footer 		: $pink;
 

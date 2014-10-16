@@ -63,6 +63,14 @@
 	white-space	: nowrap;
 }
 
+@mixin opacity( $opacity: 0.5 ) {
+
+	$ms: $opacity * 100;
+
+	filter 	: Alpha(opacity=$ms);
+	opacity : $opacity;
+}
+
 /**
  * Border radius with separate values for each corner
  */

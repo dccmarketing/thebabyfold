@@ -145,6 +145,9 @@ function load_fonts() {
 	wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' );
 	wp_enqueue_style( 'et-googleFonts' );
 
+	wp_register_style( 'fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome' );	
+
 } // load_fonts()
 add_action( 'wp_print_styles', 'load_fonts' );
 
@@ -163,9 +166,11 @@ function custom_footer_left() {
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">&copy %1$s &nbsp; <a href="%2$s" title="Login">%3$s</a></a></div>', 'thebabyfold' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	printf( __( '<span class="copyright">&copy %1$s <a href="%2$s" title="Login">%3$s</a></span>', 'thebabyfold' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
 
 	get_template_part( 'menu', 'footer' );
+
+	_e( '<span class="credits">Site designed & developed by <a href="http://dccmarketing.com" title="author">DCC Marketing</a></span><!-- .credits -->', 'thebabyfold' );
 
 } // custom_site_info()
 add_action( 'site_info', 'custom_site_info' );

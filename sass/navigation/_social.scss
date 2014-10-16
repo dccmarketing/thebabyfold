@@ -1,5 +1,15 @@
+.social-menu {
+	background: $color__bg-menu-social;
+	text-align: center;
+	@include opacity(0.75);
+}
+
+.social-headline {
+	color: $color__headline-social;
+}
+
+
 .nav-social {
-	margin: 0.6em 1.5em 0 0;
 
 	a[href*="facebook.com"] {
 		@include svgicon(facebook, red);

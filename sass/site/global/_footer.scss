@@ -1,5 +1,17 @@
 .site-footer {
+	background-color: $color__background-footer;
+	color: $color__text-menu-footer;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: $font__size-footer;
+
 	@include grid-column(12);
+
+	a,
+	a:visited {
+		color: $color__text-menu-footer;
+		text-decoration: none;
+	}
 }
 
 .footer-wrap {
@@ -7,27 +19,21 @@
 	margin: 0 auto;
 }
 
-.footer-left {
-	@include grid-column(12);
-
-	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(3);
-	}
-}
-
 .site-info {
+	overflow: auto;
 	text-align: center;
-	@include grid-column(12);
-
-	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(6);
-	}
 }
 
-.footer-right {
-	@include grid-column(12);
+@media screen and (min-width: $bp__footer) {
+	.copyright {
+		padding-right: $size__pad-footer-items;
+		display: inline-block;
+		border-right: 1px solid $pink;
+	}
 
-	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(3);
+	.credits {
+		display: inline-block;
+		padding-left: $size__pad-footer-items;
+		border-left: 1px solid $pink;
 	}
 }
