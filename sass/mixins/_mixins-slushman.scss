@@ -100,3 +100,14 @@
 	-ms-filter			: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color')";
 	filter				: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color');
 }
+
+@mixin svgicon( $icon, $color ) {
+	background-image	: url(images/#{$icon}-#{$color}.svg);
+	background-size		: 30px 30px;
+	width				: 30px;
+	height				: 30px;
+	display				: block;
+	background-repeat	: no-repeat;
+	text-decoration		: none;
+	@include hidetext();
+}

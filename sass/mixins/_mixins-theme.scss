@@ -1,0 +1,12 @@
+@mixin header_menus() {
+	display: inline-block;
+	color: $color__text-menu-headers;
+
+	> a {
+		font-size: 16px;
+	}
+
+	&:first-child {
+		border-left: none;
+	}
+}

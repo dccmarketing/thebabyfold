@@ -2,10 +2,12 @@ $size__site-main		: 100%;
 $size__site-sidebar		: 25%;
 
 $size__default-bot-marg	: 1.5em;
-$size__max-width 		: 1000px;
+$size__max-width 		: 1050px;
 
 $bp__phone				: 320px;
 $bp__tablet				: 768px;
-$bp__laptop				: 1000px;
+$bp__laptop				: 1025px;
 
-$bp__menu-button		: 600px;
+$bp__menu-button		: $bp__laptop;
+$bp__menus-header 		: 610px;
+$bp__bottom-header-menu : 810px;

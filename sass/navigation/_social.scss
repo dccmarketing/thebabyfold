@@ -1,0 +1,42 @@
+.nav-social {
+	margin: 0.6em 1.5em 0 0;
+
+	a[href*="facebook.com"] {
+		@include svgicon(facebook, red);
+	}
+
+	a[href*="movie"],
+	a[href*="film"] {
+		@include svgicon(film, red);
+	}
+
+	a[href$=".rss"], 
+	a[href$="rss.xml"], 
+	a[href*="/feed/"],
+	a[href*="/rss/"] {
+		@include svgicon(rss, red);
+	}
+
+	a[href*="twitter.com"] {
+		@include svgicon(twitter, red);
+	}
+
+	a[href*="itunes.apple.com"] {
+		@include svgicon(apple, red);
+	}
+
+	.screen-reader-text {
+		@include hidetext();
+	}
+
+	.menu-items {
+		list-style: none;
+
+		.menu-item {
+			display:  inline-block;
+			position: relative;
+			margin: 0.25em;
+			line-height: 1.5em;
+		} 
+	}
+}

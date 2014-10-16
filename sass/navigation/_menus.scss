@@ -4,12 +4,22 @@
 	float			: left;
 	width			: 100%;
 	margin-bottom	: $size__default-bot-marg;
+	background 		: $color__bg-menu;
+	@include shadow( 1px, 1px, 10px, 1px );
+
+	@media only screen and (min-width: $bp__tablet+1) and (max-width: $bp__laptop) {
+		padding-left: 230px;
+	}
 
 	ul {
 		list-style	: none;
 		margin		: 0;
-		padding-left: 0;
-		display 	: inline-block;
+		display 	: inline;
+		text-align 	: left;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			float: right;
+		}
 
 		ul {
 			display		: inherit;
@@ -37,10 +47,24 @@
 				a {
 					color: $color__text-submenu;
 				}
+			} // breakpoint
+
+			ul {
+				a {
+					@media only screen and (max-width: $bp__menu-button) {
+						padding: 0.5em 3em;
+					}
+				}
 			}
 
 			a {
-				width: 200px;
+				@media only screen and (max-width: $bp__menu-button) {
+					padding: 0.5em 2em;
+				}
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					width: 200px;
+				}
 			}
 
 			:hover > a {
@@ -49,14 +73,11 @@
 			a:hover {
 			}
 
-			@media only screen and (max-width: $bp__menu-button) {
-				li {
+			li {
+				border: none;
 
-					&:first-child {
-						padding-top: 1em;
-					}
-
-					&:last-child {
+				&:last-child {
+					@media only screen and (max-width: $bp__menu-button) {
 						padding-bottom: 0;
 					}
 				}
@@ -68,30 +89,48 @@
 		}
 	}
 	li {
-		padding: 0.5em 1em;
-
+		
 		@media only screen and (min-width: $bp__menu-button+1) {	
 			float	: left;
 			position: relative;
+			padding: 0.5em 0;
+
+			&:first-child a {
+				border-left: none;
+			}
 		}
 
-		&:hover > a {
-			color: $color__text-menu-hover;
-		}
+		&:hover {
+			background: $color__bg-menu-item-hover;
 
-		@media only screen and (min-width: $bp__menu-button+1) {
-			&:hover > ul {
-				display: block;
+			> a {
+				color: $color__text-menu-hover;
+			}
+
+			> ul {
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					display: block;
+				}
 			}
 		}
 	}
+
+	.nav-menu + .menu-item {
+		
+	}
+
 	a {
+		padding 		: 0.5em 1em;
 		display			: block;
 		text-decoration	: none;
 		color 			: $color__text-menu-mobile;
+		line-height 	: 1em;
 
 		@media only screen and (min-width: $bp__menu-button+1) {
-			color: $color__text-menu;
+			color 		: $color__text-menu;
+			border-left	: 1px solid $pink;
+			padding 	: 0.25em 1em;
 		}
 	}
 
@@ -99,10 +138,7 @@
 	.current-menu-item,
 	.current-menu-parent,
 	.current_page_ancestor {
-
-		@media only screen and (min-width: $bp__menu-button+1) {
-			background: $color__bg-menu-current;
-		}
+		background: $color__bg-menu-current;
 
 		> a {
 			color: $color__text-menu-current;
@@ -111,11 +147,15 @@
 		&:hover > a {
 			color: $color__text-menu-current-hover;
 		}
+
+		& + .menu-item a {
+			border-left: none;
+		}
 	}
 }
 
 // Center Menu
-.menu-default-container {
+.menu-main-menu-container {
 	max-width	: $size__max-width;
 	margin		: 0 auto;
 	text-align	: center;
@@ -127,7 +167,7 @@
 	display: none;
 }
 
-@media screen and (max-width: $bp__menu-button) {
+@media screen and (max-width: $bp__laptop) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display			: block;
@@ -149,6 +189,19 @@
 
 	.main-navigation ul {
 		display: none;
+	}
+}
+
+@media screen and (min-width: $bp__tablet+1) and (max-width: $bp__laptop) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		z-index: 9999;		
+	}
+
+	.menu-main-container {
+		position: absolute;
+		z-index: 9999;
+		width: 272px;
 	}
 }
 

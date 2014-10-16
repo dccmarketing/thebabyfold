@@ -138,14 +138,16 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 /**
- * Social Menu
+ * Load Fonts
  */
-/*function register_social_menu() {
+function load_fonts() {
 
-	register_nav_menu( 'social', __( 'Social', 'thebabyfold' ) );
+	wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' );
+	wp_enqueue_style( 'et-googleFonts' );
 
-} // register_social_menu()
-add_action( 'init', 'register_social_menu' );*/
+} // load_fonts()
+add_action( 'wp_print_styles', 'load_fonts' );
+
 
 
 

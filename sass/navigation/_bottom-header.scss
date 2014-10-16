@@ -1,0 +1,55 @@
+.menu-bottom-header {
+	overflow: auto;
+
+	@media only screen and (max-width: $bp__tablet) {
+		margin-bottom: 3.25em;
+		float: left;	
+	}
+
+	@media only screen and (min-width: $bp__tablet+1) {
+		width: 100%;
+	}
+
+	.nav-bottom_header {
+		@media only screen and (min-width: $bp__tablet+1) {
+			float: right;
+			padding-right: 0.6em;
+		}
+	}
+
+	.menu-items {
+		list-style: none;
+		margin-bottom: 0;
+		
+		@media only screen and (max-width: $bp__tablet) {
+			margin-left: 1em;
+		}
+	}
+
+	.menu-item {
+
+		@media only screen and (min-width: $bp__menus-header) {
+			padding: 0 0.3em;
+			@include header_menus();
+
+		} // breakpoint
+
+		@media only screen and (min-width: $bp__tablet+1) {
+			font-size: $font__size-header-menus;
+			text-transform 		: uppercase;
+		}
+	}
+}
+
+$icons: donate, employ, calendar;
+
+@each $icon in $icons {
+	.#{$icon} a {
+		@media only screen and (min-width: $bp__bottom-header-menu) {
+			
+			background-image	: url(images/#{$icon}_icon.png);
+			background-repeat	: no-repeat;
+			padding-left 		: 1.7em;
+		}
+	}
+}
