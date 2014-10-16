@@ -1,10 +1,15 @@
 .widget {
 	margin: 0 0 1.5em;
+	position: relative;
 
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
 	}
+}
+
+.widget-title {
+	display: inline-block;
 }
 
 /* Search widget */
@@ -18,3 +23,61 @@
 		width: 98.5%;
 	}
 }
+
+.widget_content_wrap {
+	margin: 0;
+	visibility: hidden;
+	transition: all 0.5s ease;
+}
+
+#show_hide_link,
+[for="show_hide_link"] {
+	visibility: hidden;
+	max-height: 0;
+}
+
+input[type=checkbox]#show_hide_link {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	display: inline-block;
+}
+
+[for="show_hide_link"] {
+	display: inline-block;
+	padding: 0 1em 0 0.25em;
+	font-size: 1.75em;
+	visibility: visible;
+	transition: all 0.5s ease;
+
+/* 	&:hover {
+		background: rgba(0,0,0,.5);
+		color: rgb(255,255,255);
+		transition: background 0.75s ease;
+	}
+ */
+	&:after {
+		content: "+";
+	}
+
+}
+
+input[type=checkbox]:checked {
+
+	~ .widget_content_wrap {
+		visibility: visible;
+		transition: all 0.5s ease;
+		margin-top: $size__default-bot-marg;
+	}
+
+	~ [for="show_hide_link"] {
+		&:after {
+			content: "-";
+		}
+	}
+
+} // End of input:checked

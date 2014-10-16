@@ -1,52 +1,42 @@
 .social-menu {
-	background: $color__bg-menu-social;
-	text-align: center;
+	background 	: $color__bg-menu-social;
+	text-align 	: center;
+	padding 	: 0.75em;
+
 	@include opacity(0.75);
 }
 
 .social-headline {
-	color: $color__headline-social;
+	color 			: $color__headline-social;
+	font-family 	: $font__cursive;
+	font-size 		: 36px;
+	margin-bottom 	: 0.25em;
 }
 
-
 .nav-social {
-
-	a[href*="facebook.com"] {
-		@include svgicon(facebook, red);
-	}
-
-	a[href*="movie"],
-	a[href*="film"] {
-		@include svgicon(film, red);
-	}
-
-	a[href$=".rss"], 
-	a[href$="rss.xml"], 
-	a[href*="/feed/"],
-	a[href*="/rss/"] {
-		@include svgicon(rss, red);
-	}
-
-	a[href*="twitter.com"] {
-		@include svgicon(twitter, red);
-	}
-
-	a[href*="itunes.apple.com"] {
-		@include svgicon(apple, red);
-	}
 
 	.screen-reader-text {
 		@include hidetext();
 	}
 
 	.menu-items {
-		list-style: none;
+		list-style 	: none;
+		margin 		: 0;
 
 		.menu-item {
-			display:  inline-block;
-			position: relative;
-			margin: 0.25em;
-			line-height: 1.5em;
+			display 	:  inline-block;
+			position 	: relative;
+			margin 		: 0 0.5em;
+			line-height : 1.5em;
 		} 
+	}
+
+	a {
+		@include hidetext();
+	}
+
+	.fa:before {
+		color 		: $color__text-social;
+		font-size 	: $font__social-icons;
 	}
 }

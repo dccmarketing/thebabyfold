@@ -87,9 +87,9 @@ function thebabyfold_widgets_init() {
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'after_widget'  => '</div><!-- .widget_content_wrap --></aside>',
 		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'after_title'   => '</h1><input type="checkbox" id="show_hide_%2$s" role="button"><label for="show_hide_%2$s" onclick=""></label><div class="widget_content_wrap">',
 	) );
 }
 add_action( 'widgets_init', 'thebabyfold_widgets_init' );
@@ -181,3 +181,16 @@ function custom_footer_right() {
 
 } // custom_footer_right()
 //add_action( 'footer_right', 'custom_footer_right' );
+
+
+/*function add_to_widget_titles( $args ) {
+
+	wp_die( print_r( $args ) );
+
+	$args[0]['after_title'] .= '<input type="checkbox" id="show_hide_link" role="button"><label for="show_hide_link" onclick=""></label><div class="widget_content_wrap">';
+
+	return $args;
+
+}
+add_filter( 'dynamic_sidebar_params', 'add_to_widget_titles' );*/
+

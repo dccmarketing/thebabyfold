@@ -61,6 +61,7 @@
 	text-indent	: 100%;
 	overflow	: hidden;
 	white-space	: nowrap;
+	font-size 	: 0;
 }
 
 @mixin opacity( $opacity: 0.5 ) {
@@ -109,8 +110,18 @@
 	filter				: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color');
 }
 
-@mixin svgicon( $icon, $color ) {
-	background-image	: url(images/#{$icon}-#{$color}.svg);
+@mixin svgicon( $icon, $color: null ) {
+
+	@if $color != null {
+
+		background-image: url(images/#{$icon}-#{$color}.svg);
+
+	} @else {
+
+		background-image: url(images/#{$icon}.svg);
+
+	}
+
 	background-size		: 30px 30px;
 	width				: 30px;
 	height				: 30px;

@@ -9,15 +9,14 @@
 ?>
 
 	</div><!-- #content -->
-
-	<div class="social-menu">
-		<h2 class="social-headline">Connect with Us</h2><?php
-
-		get_template_part( 'menu', 'social' );
-
-	?></div><!-- .social-menu -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
+		<div class="social-menu">
+			<h2 class="social-headline">Connect with Us</h2><?php
+
+			get_template_part( 'menu', 'social' );
+
+		?></div><!-- .social-menu -->
 		<div class="footer-wrap">
 			<div class="site-info"><?php
 
