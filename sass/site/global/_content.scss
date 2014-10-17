@@ -2,6 +2,7 @@
 	margin-bottom: $size__default-bot-marg;
 	@include grid-row();
 	max-width: $size__max-width;
+	color: $color__text-screen;
 }
 
 .content-area {

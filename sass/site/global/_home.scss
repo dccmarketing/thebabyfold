@@ -1,0 +1,25 @@
+.home {
+	.main-navigation {
+		margin-bottom: 0;
+	}
+
+	.social-menu {
+		@include opacity(1);
+	}
+}
+
+.home_footer {
+	color 			: $color__text-home-footer;
+	text-align 		: center;
+	max-width 		: $size__max-width;
+	margin 			: 0 auto;
+
+	.headline {
+		font-size: $font__size-home-footer-header;
+		font-family: $font__cursive;
+	}
+
+	.content {
+		font-size: $font__size-home-footer-content;
+	}
+}

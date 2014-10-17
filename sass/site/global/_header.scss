@@ -29,5 +29,6 @@
 
 	@media only screen and (min-width: $bp__tablet+1) {
 		position: absolute;
+		z-index: 900;
 	}
 }

@@ -9,11 +9,9 @@
 ?>
 
 	</div><!-- #content -->
-	<footer id="colophon" class="site-footer" role="contentinfo"><?php 
+	<footer id="colophon" class="site-footer" role="contentinfo">
 
-		//echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'footer-bg' ) ); 
-
-		?><div class="social-menu">
+		<div class="social-menu">
 			<h2 class="social-headline">Connect with Us</h2><?php
 
 			get_template_part( 'menu', 'social' );
