@@ -38,7 +38,7 @@ function thebabyfold_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -87,9 +87,9 @@ function thebabyfold_widgets_init() {
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div><!-- .widget_content_wrap --></aside>',
+		'after_widget'  => '</div><!-- .content_wrap --></aside>',
 		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1><input type="checkbox" id="show_hide_%2$s" role="button"><label for="show_hide_%2$s" onclick=""></label><div class="widget_content_wrap">',
+		'after_title'   => '</h1><span class="show_hide">+</span><div class="content_wrap">',
 	) );
 }
 add_action( 'widgets_init', 'thebabyfold_widgets_init' );
@@ -182,15 +182,25 @@ function custom_footer_right() {
 } // custom_footer_right()
 //add_action( 'footer_right', 'custom_footer_right' );
 
+/**
+ * Echos the HTML style tags
+ *
+ * @access 	protected
+ * @global 	slushman_sbgs_settings
+ * @since 	0.1
+ * 
+ * @param 	array 	$atts 	An array containing all the images on the page and their attributes
+ *
+ * @return  mixed 			The HTML style tags and their contents
+ */
+function add_style_tags() {
 
-/*function add_to_widget_titles( $args ) {
+	$img_array = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
-	wp_die( print_r( $args ) );
+	?><style>@media screen and (min-width: 769px) {.site-footer{background-image:url(<?php echo $img_array[0]; ?>);}}</style><?php
 
-	$args[0]['after_title'] .= '<input type="checkbox" id="show_hide_link" role="button"><label for="show_hide_link" onclick=""></label><div class="widget_content_wrap">';
+} // End of add_style_tags()
 
-	return $args;
+add_action( 'wp_footer', 'add_style_tags' );
 
-}
-add_filter( 'dynamic_sidebar_params', 'add_to_widget_titles' );*/
 

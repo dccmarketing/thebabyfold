@@ -1,38 +1,44 @@
 .site-footer {
-	background-color: $color__background-footer;
-	color: $color__text-menu-footer;
-	font-size: $font__size-footer;
-	width: 100%;
+	color 				: $color__text-menu-footer;
+	font-size 			: $font__size-footer;
+	width 				: 100%;
+
+	@media only screen and (min-width: $bp__tablet+1) {
+		background-repeat	: no-repeat;
+		background-position	: top center;
+		background-size		: cover;
+	}
 
 	a,
 	a:visited {
-		color: $color__text-menu-footer;
-		text-decoration: none;
+		color 			: $color__text-menu-footer;
+		text-decoration : none;
 	}
 }
 
 .footer-wrap {
-	max-width: $size__max-width;
-	margin: 0 auto;
+	background-color: $color__background-footer;
 }
 
 .site-info {
-	overflow: auto;
-	text-align: center;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	overflow 		: auto;
+	text-align 		: center;
+	padding-top 	: 1em;
+	padding-bottom 	: 1em;
+	max-width 		: $size__max-width;
+	margin 			: 0 auto;
 }
 
 @media screen and (min-width: $bp__footer) {
 	.copyright {
-		padding-right: $size__pad-footer-items;
-		display: inline-block;
-		border-right: 1px solid $pink;
+		padding-right 	: $size__pad-footer-items;
+		display 		: inline-block;
+		border-right 	: 1px solid $pink;
 	}
 
 	.credits {
-		display: inline-block;
-		padding-left: $size__pad-footer-items;
-		border-left: 1px solid $pink;
+		display 		: inline-block;
+		padding-left 	: $size__pad-footer-items;
+		border-left 	: 1px solid $pink;
 	}
 }

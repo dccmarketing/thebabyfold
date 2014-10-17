@@ -1,9 +1,12 @@
 .social-menu {
-	background 	: $color__bg-menu-social;
-	text-align 	: center;
-	padding 	: 0.75em;
+	background 		: $color__bg-menu-social;
+	text-align 		: center;
+	padding 		: 0.75em;
 
-	@include opacity(0.75);
+	@media only screen and (min-width: $bp__tablet+1) {
+		margin-bottom: 310px;
+		@include opacity(0.75);
+	}
 }
 
 .social-headline {
