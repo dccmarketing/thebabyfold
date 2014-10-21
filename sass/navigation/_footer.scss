@@ -11,14 +11,14 @@
 
 	.menu-item {
 		display: inline-block;
-	}
 
-	.menu-item a,
-	.menu-item a:visited {
-		color 			: $color__text-menu-footer;
-		text-decoration	: none;
-		padding 		: 0.25em $size__pad-footer-items;
-		line-height 	: 1em;
+		a,
+		a:visited {
+			color 			: $color__text-menu-footer;
+			text-decoration	: none;
+			padding 		: 0.25em $size__pad-footer-items;
+			line-height 	: 1em;
+		}
 	}
 
 	.menu-item + .menu-item {

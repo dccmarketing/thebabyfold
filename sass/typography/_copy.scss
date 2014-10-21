@@ -15,7 +15,29 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	quotes: "\“" "\”" "‘" "’";
+	margin: 0 $size__default-bot-marg*2 $size__default-bot-marg;
+}
+
+q {
+	quotes: "\“" "\”" "‘" "’";
+}
+
+blockquote:before,
+q:before {
+	content		: open-quote;
+	font-size	: 1.25em;
+}
+
+blockquote:after,
+q:after {
+	content		: close-quote;
+	font-size	: 1.25em;
+}
+
+blockquote p,
+q p {
+	display: inline;
 }
 
 address {
@@ -51,6 +73,8 @@ mark,
 ins {
 	background		: $color__background-ins;
 	text-decoration	: none;
+	color 			: $color__text-ins;
+	padding 		: 0 0.25em;
 }
 
 sup,

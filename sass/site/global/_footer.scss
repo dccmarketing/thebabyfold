@@ -2,6 +2,8 @@
 	color 				: $color__text-menu-footer;
 	font-size 			: $font__size-footer;
 	width 				: 100%;
+	font-weight 		: 500;
+	background-color 	: $color__background-footer;
 
 	@media only screen and (min-width: $bp__tablet+1) {
 		background-repeat	: no-repeat;
@@ -29,14 +31,19 @@
 	margin 			: 0 auto;
 }
 
-@media screen and (min-width: $bp__footer) {
-	.copyright {
+.copyright {
+
+	@media screen and (min-width: $bp__footer) {
 		padding-right 	: $size__pad-footer-items;
 		display 		: inline-block;
 		border-right 	: 1px solid $pink;
-	}
 
-	.credits {
+	}
+}
+
+.credits {
+
+	@media screen and (min-width: $bp__footer) {
 		display 		: inline-block;
 		padding-left 	: $size__pad-footer-items;
 		border-left 	: 1px solid $pink;

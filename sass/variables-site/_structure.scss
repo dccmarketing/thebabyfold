@@ -1,16 +1,18 @@
-$size__site-main		: 100%;
-$size__site-sidebar		: 25%;
+$size__site-main			: 100%;
+$size__site-sidebar			: 25%;
 
-$size__default-bot-marg	: 1.5em;
-$size__max-width 		: 1050px;
+$size__default-bot-marg		: 1.5em;
+$size__max-width 			: 1050px;
+$size__max-width-home-footer: 640px;
+$size__max-width-social-icon: 36px;
 
-$bp__phone				: 320px;
-$bp__tablet				: 768px;
-$bp__laptop				: 1025px;
+$bp__phone					: 320px;
+$bp__tablet					: 768px;
+$bp__laptop					: 1025px;
 
-$bp__menu-button		: $bp__laptop;
-$bp__menus-header 		: 610px;
-$bp__bottom-header-menu : 810px;
-$bp__footer 			: $bp__menus-header;
+$bp__menu-button			: $bp__laptop;
+$bp__menus-header 			: 610px;
+$bp__bottom-header-menu 	: 810px;
+$bp__footer 				: $bp__menus-header;
 
-$size__pad-footer-items : 0.5em;
+$size__pad-footer-items 	: 0.5em;

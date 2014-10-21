@@ -1,43 +1,62 @@
-$light	: #fff;
-$med	: #ccc;
-$dark	: #020202;
-$pink 	: #a5356d;
-$yellow	: #fdbc12;
-$tan 	: #feebc4;
-$aqua 	: #0c9a99;
-$navy 	: #2a5987;
-$lightpink: #dbb9c5;
+$light		: #fff;
+$med		: #ccc;
+$dark		: #020202;
+$pink 		: #a5356c;
+$yellow		: #febd11;
+$tan 		: #ffecc4;
+$aqua 		: #0c9a99;
+$lightaqua 	: #90c4c5;
+$navy 		: #2a5987;
+$lightpink 	: #dbb9c5;
 
 // Backgrounds
-$color__background-body		: $light;
-$color__background-screen	: #f1f1f1;
-$color__background-hr		: #ccc;
-$color__background-button	: #e6e6e6;
-$color__background-pre		: #eee;
-$color__background-ins		: #fff9c0;
-$color__background-header 	: $pink;
-$color__background-footer 	: $tan;
+$color__background-body			: $light;
+$color__background-screen		: #f1f1f1;
+$color__background-hr			: $aqua;
+$color__background-button		: $navy;
+$color__background-pre			: $tan;
+$color__background-ins			: $tan;
+$color__background-header 		: $pink;
+$color__background-footer 		: $tan;
+$color__bg-home-promo 			: $yellow;
 
 // Text colors
-$color__text-screen			: $pink;
-$color__text-input			: #666;
-$color__text-input-focus	: #111;
-$color__link				: royalblue;
-$color__link-visited		: purple;
-$color__link-hover			: midnightblue;
-$color__text-main			: #404040;
+$color__text-screen				: $pink;
+$color__text-input				: $pink;
+$color__text-input-focus		: #111;
+$color__link					: $navy;
+$color__link-visited			: $navy;
+$color__link-hover				: $aqua;
+$color__text-main				: #404040;
+$color__text-ins 				: $aqua;
+$color__text-button 			: $light;
 
-$color__headline-social 	: $light;
-$color__text-social 		: $yellow;
-$color__text-home-footer 	: $aqua;
+$color__headline-social 		: $light;
+$color__text-social 			: $yellow;
+$color__text-home-footer-header : $aqua;
+$color__text-home-footer-content: $lightaqua;
+$color__text-header-entry-title : $lightpink;
+$color__text-header-content 	: $aqua;
+$color__text-widget 			: $pink;
+$color__text-widget-title 		: $pink;
 
 // Border colors
-$color__border-button		: #ccc #ccc #bbb;
-$color__border-button-hover	: #ccc #bbb #aaa;
-$color__border-button-focus	: #aaa #bbb #bbb;
-$color__border-input		: #ccc;
-$color__border-abbr			: #666;
-$color__border-content 		: $aqua;
+$color__border-button			: $navy $navy darken( $navy, 25% );
+$color__border-button-hover		: $navy #bbb #aaa;
+$color__border-button-focus		: #aaa #bbb #bbb;
+$color__border-input			: $navy;
+$color__border-abbr				: #666;
+$color__border-content 			: $aqua;
+$color__border-home-promo 		: $light;
+
+// Shadow colors
+$color__shadow-button-text 			: rgba(255, 255, 255, 0.8);
+$color__shadow-button-inner 		: rgba(255, 255, 255, 0.5);
+$color__shadow-button-inner-2 		: rgba(0, 0, 0, 0.05);
+$color__shadow-button-inner-hover 	: rgba(255, 255, 255, 0.8);
+$color__shadow-button-inner-2-hover : rgba(0, 0, 0, 0.02);
+$color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
+$color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
 $color__bg-menu 				: $yellow;
@@ -57,6 +76,3 @@ $color__text-submenu			: $pink;
 
 $color__text-menu-headers 		: $light;
 $color__text-menu-footer 		: $pink;
-$color__text-header-entry-title : $lightpink;
-$color__text-header-content 	: $aqua;
-$color__text-widget 			: $pink;

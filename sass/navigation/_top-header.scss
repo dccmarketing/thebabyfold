@@ -49,6 +49,11 @@
 			line-height: 1em;
 
 			@include header_menus();
+
+			a{
+				font-weight: 500;
+			}
+
 		} // breakpoint
 
 		@media only screen and (min-width: $bp__tablet+1) {

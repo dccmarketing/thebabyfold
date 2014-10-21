@@ -11,10 +11,11 @@
 }
 
 .widget-title {
-	display: inline-block;
-	font-size: $font__size-widget-title;
-	text-transform: uppercase;
-	font-family: $font__main;
+	display 		: inline-block;
+	font-size 		: $font__size-widget-title;
+	text-transform 	: uppercase;
+	font-family 	: $font__main;
+	color 			: $color__text-widget-title;
 }
 
 /* Search widget */

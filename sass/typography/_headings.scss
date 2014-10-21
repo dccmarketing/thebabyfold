@@ -4,12 +4,14 @@ h3,
 h4, 
 h5, 
 h6 {
-	clear: both;
-	font-family: $font__cursive;
+	clear 		: both;
+	font-family : $font__cursive;
+	color 		: $color__text-header-content;
 }
 
 h1 {
-	font-size: 60px;
+	font-size 	: 60px;
+	color 		: $color__text-header-entry-title;
 }
 
 h2 {
@@ -29,5 +31,5 @@ h5 {
 }
 
 h6 {
-	font-size: 16em;
+	font-size: 16px;
 }

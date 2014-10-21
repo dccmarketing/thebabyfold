@@ -32,6 +32,10 @@
 			padding: 0 0.3em;
 			@include header_menus();
 
+			a {
+				font-weight: 600;
+			}
+
 		} // breakpoint
 
 		@media only screen and (min-width: $bp__tablet+1) {

@@ -4,22 +4,63 @@
 	}
 
 	.social-menu {
+		margin-bottom: $size__default-bot-marg;
 		@include opacity(1);
+
+		@media only screen and (min-width: $bp__tablet+1) {
+			margin-bottom: $size__default-bot-marg*3;
+		}
+	}
+
+	.site-footer {
+		background: $color__background-footer;
+	}
+}
+
+.promo_wrap{
+	background 		: $color__bg-home-promo;
+	border 			: solid $color__border-home-promo;
+	border-width 	: 4px 0;
+	padding 		: 3em 0;
+	overflow 		: auto;
+}
+
+.promo_boxes {
+	max-width 	: $size__max-width;
+	margin 		: 0 auto;
+}
+
+.promo_box {
+	text-align: center;
+
+	@media only screen and (min-width: $bp__menus-header) {
+		display: inline-block;
+
+		@include column(3);
 	}
 }
 
 .home_footer {
-	color 			: $color__text-home-footer;
 	text-align 		: center;
-	max-width 		: $size__max-width;
+	max-width 		: $size__max-width-home-footer;
 	margin 			: 0 auto;
+	margin-bottom 	: $size__default-bot-marg;
+	padding 	 	: 0 1em;
+
+	@media only screen and (min-width: $bp__tablet+1) {
+		margin-bottom: $size__default-bot-marg*3;
+	}
 
 	.headline {
-		font-size: $font__size-home-footer-header;
-		font-family: $font__cursive;
+		font-size 	: $font__size-home-footer-header;
+		font-family : $font__cursive;
+		line-height : 1.25em;
+		color 		: $color__text-home-footer-header;
 	}
 
 	.content {
-		font-size: $font__size-home-footer-content;
+		font-size 	: $font__size-home-footer-content;
+		font-weight : 500;
+		color 		: $color__text-home-footer-content;
 	}
 }

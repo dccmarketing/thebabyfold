@@ -12,13 +12,24 @@ get_header();
 
 			putRevSlider("homepage","homepage");
 
-		?>
-
-			<!-- Content Area -->
-
-		</main><!-- .site-main -->
+		?></main><!-- .site-main -->
 	</div><!-- .content-area -->
 </div><!-- #page -->
+	<div class="promo_wrap">
+		<div class="promo_boxes"><?php
+
+		$boxes = array( 'promo_box_1', 'promo_box_2', 'promo_box_3' );
+
+		foreach ( $boxes as $box ) {
+
+			?><div class="promo_box">
+				<img src="<?php echo get_field( $box, '203' ); ?>" />
+			</div><?php
+
+		} // foreach
+
+		?></div>
+	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="social-menu">
 			<h2 class="social-headline">Connect with Us</h2><?php

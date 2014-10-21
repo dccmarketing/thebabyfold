@@ -145,9 +145,6 @@ function load_fonts() {
 	wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' );
 	wp_enqueue_style( 'et-googleFonts' );
 
-	wp_register_style( 'fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fontawesome' );	
-
 } // load_fonts()
 add_action( 'wp_print_styles', 'load_fonts' );
 
@@ -202,5 +199,88 @@ function add_style_tags() {
 } // End of add_style_tags()
 
 add_action( 'wp_footer', 'add_style_tags' );
+
+/**
+ * Returns an ACF field, if its not empty
+ * 
+ * @param 	string 		$field 		The name of the ACF field to grab
+ *
+ * @uses 	get_field()
+ * 
+ * @return 	mixed 					The data from the ACF field, or FALSE if empty
+ */
+function return_field_info( $field, $group = null ) {
+
+	if ( empty( $group ) ) {
+
+		$output = get_field( $field );
+
+	} else {
+
+		$output = get_field( $field, $group );
+
+	}
+
+	$output = get_field( $field, $group );
+
+	if ( empty( $output ) ) { return FALSE; }
+
+	return $output;
+
+} // return_field_info()
+
+function get_contact_info( $pageID ) {
+
+	$group 	= return_field_info( 'group_name', $pageID );
+
+	$output = '';
+	$output .= return_field_info( 'name', $group ) . '<br />';
+	$output .= return_field_info( 'address', $group ) . '<br />';
+	$output .= return_field_info( 'city_state_zip', $group ) . '<br />';
+	$output .= 'Phone: ' . return_field_info( 'phone', $group ) . '<br />';
+	$output .= 'Fax: ' . return_field_info( 'fax', $group );
+
+	return $output;
+
+} // get_contact_info()
+
+
+function get_lunch_menu( $pageID ) {
+
+	$group 	= return_field_info( 'group_name', $pageID );
+	$field 	= return_field_info( 'lunch_menu_file', $group );
+	$output = '';
+
+	if ( FALSE !== $field ) {
+
+		$output .= '<p><a href="' . $field . '">Lunch Menu</a></p>';
+
+	} 
+
+	return $output;
+
+} // get_lunch_menu()
+
+function get_forms_links() {
+
+	$group 	= return_field_info( 'group_name', $pageID );
+	$rows 	= return_field_info( 'forms_links', $group );
+	$output = '';
+
+	if( $rows ) {
+
+		foreach( $rows as $row ) {
+
+			$output .= '<p><a href="' . $row['form'] . '">' . $row['form_name'] .'</a></p>';
+
+		} // foreach
+
+	} // have $rows
+
+	return $output;
+
+} // get_forms_links()
+
+
 
 
