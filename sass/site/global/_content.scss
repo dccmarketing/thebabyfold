@@ -1,8 +1,8 @@
-.site-content {
-	margin-bottom: $size__default-bot-marg;
+.wrap {
 	@include grid-row();
-	max-width: $size__max-width;
-	color: $color__text-screen;
+	margin-bottom 	: $size__default-bot-marg;
+	max-width 		: $size__max-width;
+	color 			: $color__text-screen;
 }
 
 .content-area {
@@ -10,12 +10,13 @@
 
 	.entry-title {
 		font-family: $font__cursive;
-		line-height: 1em;
+		line-height: 1.5em;
 	}
 
 	.entry-content {
-		font-size: $font__size-content;
-		margin-top: 0;
+		font-size 	: $font__size-content;
+		margin-top 	: 0;
+		overflow 	: auto;
 	}
 
 	@media only screen and (min-width: $bp__tablet) {
@@ -24,9 +25,8 @@
 		float: right;
 
 		.hentry {
-			padding: 0 4%;
-			border-left: 1px solid $color__border-content;
-			float: right;
+			padding 	: 0 4%;
+			border-left : 1px solid $color__border-content;
 		}
 
 		.entry-title {
@@ -39,9 +39,54 @@
 	@include grid-column(12);
 
 	@media only screen and (min-width: $bp__tablet) {
-		margin-top: 5.6em;
 		@include grid-column(4);
-		padding: 0 0 0 8%;
+		margin-top 	: 5.6em;
+		padding 	: 0 0 0 8%;
 		
 	}
 }
+
+.posts_wrap .hentry {
+	float 	: none;
+	border 	: none;
+}
+
+.page-template-page_full-width-php {
+
+	.site-content {
+		max-width: inherit;
+
+		.wrap{
+			max-width 	: $size__max-width;
+			margin 		: 0 auto;
+		}
+	}
+
+	.entry-title {
+		text-align: center;
+	}
+}
+
+.page-template-page-page-with-posts-php {
+	.post {
+		.entry-title {
+			font-size 	: 24px;
+			font-family : $font__main;
+			color 		: $color__link;
+			padding-left: 0;
+			display 	: inline;
+		}
+	}
+
+	.paging-navigation {
+		display: inherit;
+	}
+
+	.hidethis {
+		display: none;
+	}
+}
+
+
+
+

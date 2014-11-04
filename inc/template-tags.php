@@ -16,28 +16,34 @@ if ( ! function_exists( 'thebabyfold_paging_nav' ) ) :
  * @uses 	get_previous_posts_link()
  * @uses 	previous_posts_link()
  */
-	function thebabyfold_paging_nav() {
+	function thebabyfold_paging_nav(  ) {
 
 		// Don't print empty markup if there's only one page.
 		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) { return; }
 
 		?><nav class="navigation paging-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'thebabyfold' ); ?></h1>
-			<div class="nav-links">
+			<div class="nav-links"><?php
 
-				<?php if ( get_next_posts_link() ) : ?>
-				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thebabyfold' ) ); ?></div>
-				<?php endif; ?>
+				if ( get_next_posts_link() ) {
+				
+					?><div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thebabyfold' ) ); ?></div><?php
+				
+				}
 
-				<?php if ( get_previous_posts_link() ) : ?>
-				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thebabyfold' ) ); ?></div>
-				<?php endif; ?>
+				if ( get_previous_posts_link() ) {
 
-			</div><!-- .nav-links -->
+					?><div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thebabyfold' ) ); ?></div><?php
+				
+				}
+
+			?></div><!-- .nav-links -->
 		</nav><!-- .navigation --><?php
 
 	} // thebabyfold_paging_nav()
 endif;
+
+
 
 if ( ! function_exists( 'thebabyfold_post_nav' ) ) :
 /**
@@ -63,6 +69,46 @@ if ( ! function_exists( 'thebabyfold_post_nav' ) ) :
 
 	} // thebabyfold_post_nav()
 endif;
+
+
+
+if ( ! function_exists( 'thebabyfold_posts_on_page_nav' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @uses 	get_next_posts_link()
+ * @uses 	next_posts_link()
+ * @uses 	get_previous_posts_link()
+ * @uses 	previous_posts_link()
+ */
+	function thebabyfold_posts_on_page_nav( $posts ) {
+
+		// Don't print empty markup if there's only one page.
+		if ( 2 > $posts->max_num_pages ) { return; }
+
+		?><nav class="navigation paging-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'thebabyfold' ); ?></h1>
+			<div class="nav-links"><?php
+
+				if ( get_next_posts_link() ) {
+				
+					?><div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thebabyfold' ) ); ?></div><?php
+				
+				}
+
+				if ( get_previous_posts_link() ) {
+
+					?><div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thebabyfold' ) ); ?></div><?php
+				
+				}
+
+			?></div><!-- .nav-links -->
+		</nav><!-- .navigation --><?php
+
+	} // thebabyfold_posts_on_page_nav()
+endif;
+
+
 
 if ( ! function_exists( 'thebabyfold_posted_on' ) ) :
 /**
@@ -108,6 +154,8 @@ if ( ! function_exists( 'thebabyfold_posted_on' ) ) :
 
 	} // thebabyfold_posted_on()
 endif;
+
+
 
 if ( ! function_exists( 'thebabyfold_entry_footer' ) ) :
 /**
@@ -160,6 +208,8 @@ if ( ! function_exists( 'thebabyfold_entry_footer' ) ) :
 	} // thebabyfold_entry_footer()
 endif;
 
+
+
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -202,6 +252,8 @@ function thebabyfold_categorized_blog() {
 	}
 
 } // thebabyfold_categorized_blog()
+
+
 
 /**
  * Flush out the transients used in thebabyfold_categorized_blog.

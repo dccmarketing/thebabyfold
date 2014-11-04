@@ -45,15 +45,4 @@
 	}
 }
 
-$icons: donate, employ, calendar;
 
-@each $icon in $icons {
-	.#{$icon} a {
-		@media only screen and (min-width: $bp__bottom-header-menu) {
-			
-			background-image	: url(images/#{$icon}_icon.png);
-			background-repeat	: no-repeat;
-			padding-left 		: 1.7em;
-		}
-	}
-}

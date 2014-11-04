@@ -9,8 +9,7 @@
 
 get_header(); ?>
 
-		<div id="wrap">
-
+		<div class="wrap">
 			<div id="content" class="full-width"><?php
 
 			while ( have_posts() ) : the_post();
@@ -26,6 +25,7 @@ get_header(); ?>
 
 			endwhile; // loop
 				
-			?></div><!-- // #content --><?php
+			?></div><!-- // #content -->
+		</div><!-- .wrap --><?php
 				
 get_footer(); ?>
