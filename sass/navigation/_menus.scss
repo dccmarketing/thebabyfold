@@ -93,9 +93,9 @@
 	li {
 		
 		@media only screen and (min-width: $bp__menu-button+1) {	
-			float	: left;
-			position: relative;
-			padding: 0.5em 0;
+			float	 	: left;
+			position 	: relative;
+			padding 	: 0.5em 0;
 
 			&:first-child a {
 				border-left: none;
@@ -103,10 +103,12 @@
 		}
 
 		&:hover {
-			background: $color__bg-menu-item-hover;
+			background 	: $color__bg-menu-item-hover;
+			transition 	: background 0.25s ease-in-out;
 
 			> a {
-				color: $color__text-menu-hover;
+				color 		: $color__text-menu-hover;
+				transition 	: background 0.25s ease-in-out;
 			}
 
 			> ul {

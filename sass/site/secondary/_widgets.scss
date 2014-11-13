@@ -33,18 +33,3 @@
 		width: 98.5%;
 	}
 }
-
-.show_hide {
-	font-size: 1.8em;
-	margin-left: 0.25em;
-}
-
-$icons: contact, calendar_sub, lunch, news, forms;
-
-@each $icon in $icons {
-	.#{$icon}_widget {
-		background-image		: url(images/#{$icon}_icon.png);
-		background-repeat		: no-repeat;
-		background-position-y 	: 5px;
-	}
-}

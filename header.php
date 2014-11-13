@@ -31,10 +31,12 @@ wp_head();
 
 			get_template_part( 'menu', 'top_header' ); ?>
 
-			<div class="fest-logo-container">
-				<a href="http://thebabyfold.net/" class="fest-logo-link" target="_blank">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/fest_logo.png" class="fest-logo" />
-				</a>
+			<div class="fest-logo">
+				<a href="http://thebabyfold.net/" class="fest-logo-link" target="_blank"><?php
+
+					echo get_svg( 'trees' );
+
+				?></a>
 			</div><!-- .fest-logo-container --><?php
 
 			get_template_part( 'menu', 'bottom_header' );

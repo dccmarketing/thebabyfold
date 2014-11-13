@@ -39,9 +39,27 @@
 		} // breakpoint
 
 		@media only screen and (min-width: $bp__tablet+1) {
-			font-size: $font__size-header-menus;
+			font-size 			: $font__size-header-menus;
 			text-transform 		: uppercase;
 		}
+	}
+
+	svg {
+		width: 0;
+		
+		@media only screen and (min-width: $bp__tablet) {
+			width: 25px;
+		}
+
+		path {
+			fill: $color__svg-bottom-header;
+		}
+	}
+
+	.menu-icon-label {
+		display 		: inline-block;
+		vertical-align 	: top;
+		padding 		: 0.25em;
 	}
 }
 

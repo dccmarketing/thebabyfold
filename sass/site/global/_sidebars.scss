@@ -1,0 +1,53 @@
+.block {
+	margin 		: 0 0 1.5em;
+	position 	: relative;
+	color: $color__text-widget;
+
+	/* Make sure select elements fit in widgets */
+	select {
+		max-width: 100%;
+	}
+
+	.block-content {
+		display: none;
+	}
+}
+
+.block-icon {
+	width 			: 37px;
+	display 		: inline-block;
+	vertical-align 	: top;
+	fill 			: $color__svg-sidebar;
+}
+
+.block-title {
+	display 		: inline-block;
+	font-size 		: $font__size-widget-title;
+	text-transform 	: uppercase;
+	font-family 	: $font__main;
+	color 			: $color__text-widget-title;
+	vertical-align 	: top;
+}
+
+.block-title-text {
+	padding 		: 0.2em 0.5em;
+	display 		: inline-block;
+	vertical-align 	: top;
+}
+
+.show_hide {
+	font-size 		: 1.8em;
+	line-height 	: 0.9em;
+	display 		: inline-block;
+	vertical-align 	: top;
+}
+
+$icons: contact, calendar_sub, lunch, news, forms;
+
+@each $icon in $icons {
+	.#{$icon}_block {
+		background-image		: url(images/#{$icon}_icon.png);
+		background-repeat		: no-repeat;
+		background-position-y 	: 0.4em;
+	}
+}

@@ -1,26 +1,27 @@
-.fest-logo-container {
+.fest-logo {
+	width: 100%;
 
 	@media only screen and (max-width: $bp__tablet) {
 		position	: absolute;
 		bottom 		: 0;
 		text-align	: center;
-		@include grid-column(12);
 	}
 
 	@media only screen and (min-width: $bp__tablet+1) {
 		float: right;
 		position: inherit;
 		bottom: inherit;
+		width: inherit;
 		padding-top: 0.3em;
 	}
-}
 
-.fest-logo-link {
+	svg {
+		width: 180px;
 
-}
-
-.fest-logo {
-
+		path {
+			fill: $color__svg-fest-logo;
+		}
+	}
 }
 
 .menu-top-header {

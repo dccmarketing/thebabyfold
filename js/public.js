@@ -1,18 +1,18 @@
 /**
  * Collapsable Widgets
  *
- * Click the title of the widget, the widget appears, click it again and it disappears.
+ * Click the title of the block, the block appears, click it again and it disappears.
  * Includes a plus/minus icon at the end that changes based on the open/closed state
  */
 jQuery(document).ready(function($){
 
-	$(".widget-title").css("cursor", "pointer");
+	$(".block-title").css("cursor", "pointer");
 
-	$(".widget").each( function() {
+	$(".block").each( function() {
 
-		var widget = $(this);
-		var title = widget.children(":first-child");
-		var content = widget.children(":last-child");
+		var block = $(this);
+		var title = block.children(":first-child");
+		var content = block.children(":last-child");
 		var plus_minus = $(this).children(".show_hide");
 
 		title.click( function(){
@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 
 		}); // title.click()
 
-	}); // .widget
+	}); // .block
 
 });
 

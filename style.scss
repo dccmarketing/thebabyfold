@@ -1,9 +1,9 @@
 /*!
 Theme Name: thebabyfold
-Theme URI: http://underscores.me/
-Author: Slushman
-Author URI: http://slushman.com/
-Description: This is a blank starter theme for WordPress derived from thebabyfold by Automattic and including the Foundation framework.
+Theme URI: http://babyfold.org/
+Author: Chris Wilcoxson and Brian Armstrong
+Author URI: http://dccmarketing.com/
+Description: This is a blank starter theme for WordPress derived from _s by Automattic and including the Foundation framework.
 Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -51,6 +51,7 @@ and Blueprint http://www.blueprintcss.org/
 @import "sass/mixins/mixins-slushman";
 @import "sass/mixins/mixins-theme";
 @import "sass/foundation/foundation";
+@import "sass/hover/hover";
 
 /*--------------------------------------------------------------
 1.0 Reset

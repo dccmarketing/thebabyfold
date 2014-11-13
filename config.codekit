@@ -195,13 +195,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/calendar_sub_icon.png": {
+	"\/images\/calendar_icon2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 0,
-		"inputAbbreviatedPath": "\/images\/calendar_sub_icon.png",
-		"outputAbbreviatedPath": "\/images\/calendar_sub_icon.png",
+		"inputAbbreviatedPath": "\/images\/calendar_icon2.png",
+		"outputAbbreviatedPath": "\/images\/calendar_icon2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2137,7 +2137,7 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/hover\/hover.scss",
 		"outputAbbreviatedPath": "\/sass\/hover\/hover.css",
@@ -2493,6 +2493,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/site\/global\/_home.scss",
 		"outputAbbreviatedPath": "\/sass\/site\/global\/_home.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/site\/global\/_sidebars.scss": {
+		"createSourceMap": 1,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/site\/global\/_sidebars.scss",
+		"outputAbbreviatedPath": "\/sass\/site\/global\/_sidebars.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 3,
