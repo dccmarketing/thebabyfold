@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Page with Posts
- * 
+ *
  * Description: A page with posts at the bottom
  *
  * @package thebabyfold
@@ -23,22 +23,13 @@ get_header(); ?>
 					if ( comments_open() || '0' != get_comments_number() ) {
 
 						comments_template();
-						
-					} 
+
+					}
 
 				endwhile; // page loop.
 
 				$category 	= get_field( 'categories' );
-
-				if ( 'Volunteer' == $page_title ) {
-
-					$cat_posts 	= get_category_posts( $category, -1 );
-
-				} else {
-
-					$cat_posts 	= get_category_posts( $category );
-
-				}
+				$cat_posts 	= babyfold_get_category_posts( $category );
 
 				if ( 0 < $cat_posts->found_posts ) {
 
@@ -46,13 +37,13 @@ get_header(); ?>
 
 					while ( $cat_posts->have_posts() ) : $cat_posts->the_post();
 
-						if ( 'Volunteer' == $page_title ) {
+						if ( 'Volunteer' == $page_title || 'How We Can Help You' == $page_title ) {
 
 							get_template_part( 'content', 'volunteeropps' );
 
 						} else {
 
-							get_template_part( 'content', 'excerpt' );
+							get_template_part( 'content', get_post_format() );
 
 						}
 
@@ -60,13 +51,14 @@ get_header(); ?>
 
 					echo '</div><!-- .posts_wrap -->';
 
-				} // enpty check
+				} // empty check
 
+				wp_reset_postdata();
 
 			?></main><!-- #main -->
 		</div><!-- #primary --><?php
 
-get_sidebar( 'left' );
+get_sidebar();
 
 	?></div><!-- .wrap --><?php
 

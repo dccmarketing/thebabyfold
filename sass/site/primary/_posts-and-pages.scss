@@ -26,3 +26,34 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.markertext {
+
+	h3 {
+		font-family : $font__main;
+		font-size 	: 1.5em;
+	}
+}
+
+.file-wrap {
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		width 			: 49%;
+		display 		: inline-block;
+		margin-bottom 	: $size__default-bot-marg;
+	}
+}
+
+.file-cover {
+	max-width: 200px;
+}
+
+.file-name {
+
+}
+
+.service-areas {
+	-webkit-columns : 200px 2;
+	-moz-columns 	: 200px 2;
+	columns 		: 200px 2;
+}

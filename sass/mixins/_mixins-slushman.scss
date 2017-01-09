@@ -19,10 +19,10 @@
  * Adding a blur
  */
 @mixin blur( $blur ) {
-	-webkit-filter	: blur( $blur ); 
-	-moz-filter		: blur( $blur ); 
-	-o-filter		: blur( $blur ); 
-	-ms-filter		: blur( $blur ); 
+	-webkit-filter	: blur( $blur );
+	-moz-filter		: blur( $blur );
+	-o-filter		: blur( $blur );
+	-ms-filter		: blur( $blur );
 	filter			: blur( $blur );
 	filter			:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$blur');
 }
@@ -54,6 +54,27 @@
 	margin-right: $marginperc;
 }
 
+@mixin margcols( $quantity, $span: 1, $margin: 1.66666667 ) {
+
+	$margins	: $quantity * ( $margin * 2 );
+	$start 		: 99 - $margins;
+	$boxwidth	: ( $start - $margins ) / $quantity;
+	$width		: percentage( $boxwidth / $start );
+
+	@if ( $span > 1 ) {
+		$width: percentage( ( ( ( $start / $quantity ) * $span ) - ( $margin * 2 ) ) / $start );
+	}
+
+	$marginperc	 	: percentage( $margin / 99 );
+
+	width			: $width;
+	margin-left	 	: $marginperc;
+	margin-right 	: $marginperc;
+	display 		: inline-block;
+	vertical-align 	: top;
+
+}
+
 /**
  * Hides text
  */
@@ -78,7 +99,7 @@
 
 /**
  * Sets the opacity
- * 
+ *
  * @param 	$opacity 	The amount of opacity you want, default: 0.5
  */
 @mixin opacity( $opacity: 0.5 ) {
@@ -97,12 +118,12 @@
 	-webkit-border-top-right-radius		: $topright;
 	-webkit-border-bottom-right-radius	: $botright;
 	-webkit-border-bottom-left-radius	: $botleft;
-	
+
 	-moz-border-radius-topleft			: $topleft;
 	-moz-border-radius-topright			: $topright;
 	-moz-border-radius-bottomright		: $botright;
 	-moz-border-radius-bottomleft		: $botleft;
-	
+
 	border-top-left-radius				: $topleft;
 	border-top-right-radius				: $topright;
 	border-bottom-right-radius			: $botright;
@@ -111,7 +132,7 @@
 
 /**
  * Creates a shadow on an object
- * 
+ *
  * $x: h-shadow - horizontal positioning
  * $y: v-shadow - vertical positioning
  * $blur: blur - blur distance
@@ -139,11 +160,82 @@
 
 	}
 
+	@extend %hidetext;
+
 	background-size		: 30px 30px;
 	width				: 30px;
 	height				: 30px;
 	display				: block;
 	background-repeat	: no-repeat;
 	text-decoration		: none;
-	@include hidetext();
+}
+
+
+
+%hidetext {
+	text-indent	: 100%;
+	overflow	: hidden;
+	white-space	: nowrap;
+	font-size 	: 0;
+}
+
+%listreset {
+	list-style 	: none;
+	margin 		: 0;
+	padding 	: 0;
+}
+
+%vertcenter {
+	position 	: relative;
+	top 		: 50%;
+	transform 	: translateY(-50%);
+}
+
+%menutoggle {
+	display 		: block;
+	width			: 100%;
+	border			: none;
+	line-height		: 1.25em;
+	font-size		: 1.25em;
+	box-shadow		: none;
+	border-radius	: 0;
+	text-shadow		: none;
+	outline 		: 0;
+	background		: $color__bg-menu-button;
+	color 			: $color__text-menu-button;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border		: none;
+		box-shadow	: none;
+		border-color: inherit;
+	}
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		z-index : 9999;
+	}
+}
+
+%nobreak {
+	-webkit-column-break-inside : avoid;
+	page-break-inside 			: avoid;
+	break-inside 				: avoid;
+}
+
+
+%clearafter {
+	&:after {
+		display 	: block;
+		height 		: 0;
+		clear 		: both;
+		visibility 	: hidden;
+		content 	: "";
+	}
+}
+
+%bgimage {
+	background-size 	: cover;
+	background-repeat 	: no-repeat;
+	background-position : center center;
 }

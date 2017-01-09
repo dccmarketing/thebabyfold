@@ -8,18 +8,47 @@
 	}
 
 	@media only screen and (min-width: $bp__tablet+1) {
-		float: right;
-		position: inherit;
-		bottom: inherit;
-		width: inherit;
-		padding-top: 0.3em;
+		float 		: right;
+		position 	: inherit;
+		bottom 		: inherit;
+		width 		: inherit;
+		padding-top : 0.3em;
 	}
 
 	svg {
-		width: 180px;
+		width 	: 180px;
+		height 	: 31px;
+		fill 	: $color__svg-fest-logo;
+	}
+}
 
-		path {
-			fill: $color__svg-fest-logo;
+
+.trees {
+
+	.menu-icon-label {
+		@media only screen and (min-width: $bp__tablet+1) {
+			text-indent	: 100%;
+			overflow	: hidden;
+			white-space	: nowrap;
+			font-size 	: 0;
+		}
+	}
+
+
+	.fest-icon {
+		display: none;
+
+		@media only screen and (min-width: $bp__tablet+1) {
+			display: inline;
+		}
+
+		svg {
+
+			@media only screen and (min-width: $bp__tablet+1) {
+				width: 180px;
+				height: 31px;
+				fill: #fff;
+			}
 		}
 	}
 }
@@ -37,21 +66,28 @@
 	}
 
 	.menu-items {
-		list-style: none;
-		margin-left: 1.5em;
+		list-style 		: none;
+		margin-left 	: 0;
+		margin-bottom 	: 0.75em;
+
+		@media only screen and (max-width: $bp__tablet) {
+			margin-right 	: 0.5em;
+		}
 	}
 
 	.menu-item {
-		text-align: right;
+		text-align 	: right;
+		padding 	: 0.25em 0;
 
 		@media only screen and (min-width: $bp__menus-header) {
-			padding: 0 0.5em;
-			border-left: 1px solid $color__text-menu-headers;
-			line-height: 1em;
+			padding 		: 0 0.5em;
+			border-right 	: 1px solid $color__text-menu-headers;
+			line-height 	: 1em;
+			vertical-align 	: middle;
 
 			@include header_menus();
 
-			a{
+			a {
 				font-weight: 500;
 			}
 

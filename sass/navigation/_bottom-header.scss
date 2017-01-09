@@ -1,13 +1,14 @@
 .menu-bottom-header {
 	overflow: auto;
+	float: left;
 
 	@media only screen and (max-width: $bp__tablet) {
 		margin-bottom: 3.25em;
-		float: left;	
 	}
 
 	@media only screen and (min-width: $bp__tablet+1) {
 		width: 100%;
+		float: right;
 	}
 
 	.nav-bottom_header {
@@ -20,9 +21,9 @@
 	.menu-items {
 		list-style: none;
 		margin-bottom: 0;
-		
+
 		@media only screen and (max-width: $bp__tablet) {
-			margin-left: 1em;
+			margin-left: 0.5em;
 		}
 	}
 
@@ -46,13 +47,12 @@
 
 	svg {
 		width: 0;
-		
+		height: 0;
+		fill: $color__svg-bottom-header;
+
 		@media only screen and (min-width: $bp__tablet) {
 			width: 25px;
-		}
-
-		path {
-			fill: $color__svg-bottom-header;
+			height: 25px;
 		}
 	}
 

@@ -20,6 +20,15 @@ wp_head();
 ?></head>
 
 <body <?php body_class(); ?>>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TM74VS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TM74VS');</script>
+<!-- End Google Tag Manager -->
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'thebabyfold' ); ?></a>
 
@@ -29,15 +38,20 @@ wp_head();
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bf_logo.png" /></a>
 			</div><!-- .site-branding --><?php
 
-			get_template_part( 'menu', 'top_header' ); ?>
+			get_search_form();
+
+			get_template_part( 'menu', 'top_header' );
+
+			/*?>
 
 			<div class="fest-logo">
 				<a href="http://thebabyfold.net/" class="fest-logo-link" target="_blank"><?php
 
-					echo get_svg( 'trees' );
+					echo babyfold_get_svg( 'trees' );
 
 				?></a>
 			</div><!-- .fest-logo-container --><?php
+			*/
 
 			get_template_part( 'menu', 'bottom_header' );
 
@@ -47,6 +61,6 @@ wp_head();
 		<button class="menu-toggle"><?php _e( 'Menu', 'thebabyfold' ); ?></button><?php
 
 			wp_nav_menu( array( 'theme_location' => 'main' ) );
-	
+
 	?></nav><!-- #site-navigation -->
 	<div id="content" class="site-content">

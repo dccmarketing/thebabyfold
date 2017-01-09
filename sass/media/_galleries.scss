@@ -13,7 +13,7 @@
 
 @for $i from 2 through 9 {
 	.gallery-columns-#{$i} .gallery-item {
-		@include column( $i );
+		@include margcols( $i );
 	}
 }
 
@@ -24,8 +24,8 @@
 }
 
 .gallery-icon {
-	a { 
-		display		: block; 
+	a {
+		display		: block;
 		text-align	: center;
 	}
 

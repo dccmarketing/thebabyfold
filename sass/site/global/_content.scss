@@ -5,6 +5,11 @@
 	color 			: $color__text-screen;
 }
 
+.site-content {
+	float: left;
+	width: 100%;
+}
+
 .content-area {
 	@include grid-column(12);
 
@@ -42,7 +47,7 @@
 		@include grid-column(4);
 		margin-top 	: 5.6em;
 		padding 	: 0 0 0 8%;
-		
+
 	}
 }
 
@@ -87,6 +92,7 @@
 	}
 }
 
-
-
+.tribe-events-page-template h1 {
+	text-align: center;
+}
 

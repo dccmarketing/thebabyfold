@@ -15,15 +15,35 @@ get_header();
 		?></main><!-- .site-main -->
 	</div><!-- .content-area -->
 </div><!-- #page -->
-	<div class="promo_wrap">
-		<div class="promo_boxes"><?php
+	<div class="promo-wrap">
+		<div class="promo-boxes"><?php
 
 		$boxes = array( 'promo_box_1', 'promo_box_2', 'promo_box_3' );
 
 		foreach ( $boxes as $box ) {
 
-			?><div class="promo_box">
-				<img src="<?php echo get_field( $box, '203' ); ?>" />
+			if ( '' == get_theme_mod( $box . '_url' ) ) {
+
+				$link = get_bloginfo( 'url' );
+
+			} else {
+
+				$link = get_theme_mod( $box . '_url' );
+
+			}
+
+			?><div class="promo-box" style="background-image:url(<?php echo esc_url( get_theme_mod( $box . '_image' ) ); ?>);">
+				<a href="<?php echo esc_url( $link ); ?>"><?php
+
+				$text = get_theme_mod( $box . '_text' );
+
+				if ( ! empty( $text ) ) {
+
+					echo '<span class="promo-box-text">' . esc_html( $text ) . '</span>';
+
+				}
+
+				?></a>
 			</div><?php
 
 		} // foreach
@@ -43,12 +63,14 @@ get_header();
 		</div><!-- .home_footer -->
 		<div class="site-info"><?php
 
-			do_action( 'site_info' );
+			printf( __( '<div class="copyright">&copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'thebabyfold' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+			get_template_part( 'menu', 'footer' );
+			printf( __( '<div class="credits">Designed and developed by <a href="%1$s">DCC Marketing</a></div>', 'thebabyfold' ), 'http://dccmarketing.com' );
 
 		?></div><!-- .site-info -->
 
 	</footer><!-- #colophon -->
-<?php 
+<?php
 
 wp_footer();
 

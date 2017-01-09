@@ -1,0 +1,13 @@
+/**
+ * Admin-specific styling
+ */
+
+.update-nag,
+#updated-nag {
+
+	.post-type-sm-location &,
+	.toplevel_page_simplemap &,
+	.simplemap_page_simplemap-import-export & {
+		display: none;
+	}
+}

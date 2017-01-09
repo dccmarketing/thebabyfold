@@ -6,7 +6,8 @@
 		font-size: 14px;
 	}
 
-	&:first-child {
-		border-left: none;
+	&:first-child,
+	&:last-child {
+		border-right: none;
 	}
 }

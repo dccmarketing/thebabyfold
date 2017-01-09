@@ -1,13 +1,11 @@
-@media only screen and (max-width: $bp__tablet) {
-	.site-header {
-		overflow: auto;
-	}
-}
-
 .site-header {
 	background 	: $color__background-header;
 	color		: $light;
 	position 	: relative;
+
+	@media only screen and (max-width: $bp__tablet) {
+		overflow: auto;
+	}
 
 	@media only screen and (min-width: $bp__tablet+1) {
 		height: 93px;
@@ -16,6 +14,77 @@
 	a {
 		color 			: $light;
 		text-decoration : none;
+	}
+
+
+	.search {
+		float: right;
+	}
+
+	.search-highlight {
+		background 	: $pink;
+		color 		: $light;
+	}
+
+	.search-field {
+		border 			: none;
+		cursor 			: pointer;
+		margin 			: 3px 0;
+		padding 		: 0 0 0 34px;
+		position 		: relative;
+		transition 		: width 0.3s ease, border 0.3s ease;
+		width 			: 0;
+		font-size 		: 22px;
+		display 		: none;
+		background-color: transparent;
+
+		&:focus {
+			border 	: 1px solid $light;
+			cursor 	: text;
+			outline : 0;
+			width 	: 200px;
+			color 	: $yellow;
+		}
+
+		@media screen and (min-width: $bp__tablet) {
+			display: inherit;
+		}
+	}
+
+	.search-form {
+		float 	: right;
+		position: relative;
+
+		.search-submit {
+			display: none;
+		}
+
+		&:before {
+			font-family : dashicons;
+			content 	: "\f179";
+			color 		: $light;
+			position 	: absolute;
+			left 		: 0.1em;
+			font-size 	: 1.75em;
+		}
+	}
+
+	input[type="search"] {
+		&::-webkit-input-placeholder {
+		   color: $light;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: $light;
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: $light;
+		}
+
+		&:-ms-input-placeholder {
+		   color: $light;
+		}
 	}
 }
 

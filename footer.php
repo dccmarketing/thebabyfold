@@ -20,9 +20,11 @@
 		<div class="footer-wrap">
 			<div class="site-info"><?php
 
-				do_action( 'site_info' );
+				printf( __( '<div class="copyright">&copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'thebabyfold' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+				get_template_part( 'menu', 'footer' );
+				printf( __( '<div class="credits">Designed and developed by <a href="%1$s">DCC Marketing</a></div>', 'thebabyfold' ), 'http://dccmarketing.com' );
 
-			?></div><!-- .site-info -->		
+			?></div><!-- .site-info -->
 		</div><!-- .footer-wrap -->
 
 	</footer><!-- #colophon -->

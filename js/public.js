@@ -15,22 +15,26 @@ jQuery(document).ready(function($){
 		var content = block.children(":last-child");
 		var plus_minus = $(this).children(".show_hide");
 
-		title.click( function(){
+		if ( ! block.hasClass( "open" ) ) {
 
-			content.slideToggle(250);
-			title.toggleClass("open");
-			
-			if ( title.hasClass( "open" ) ) {
+			title.click( function(){
 
-				plus_minus.html("-");
+				content.slideToggle(250);
+				title.toggleClass("open");
 
-			} else {
+				if ( title.hasClass( "open" ) ) {
 
-				plus_minus.html("+");
+					plus_minus.html("-");
 
-			}
+				} else {
 
-		}); // title.click()
+					plus_minus.html("+");
+
+				}
+
+			}); // title.click()
+
+		}
 
 	}); // .block
 
@@ -46,7 +50,7 @@ jQuery(document).ready(function($){
 
 	$(".showhide").css("cursor", "pointer");
 
-	$(".page-template-page-page-with-posts-php .category-volunteer-opportunities").each( function() {
+	$(".page-template-page-page-with-posts-php .category-volunteer-opportunities, .page-template-page-page-with-posts-php .category-help-you").each( function() {
 
 		var post = $(this);
 		var title = post.children(":first-child");
@@ -57,7 +61,7 @@ jQuery(document).ready(function($){
 
 			content.slideToggle(250);
 			title.toggleClass("open");
-			
+
 			if ( title.hasClass( "open" ) ) {
 
 				plus_minus.html("-");

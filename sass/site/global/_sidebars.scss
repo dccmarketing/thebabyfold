@@ -15,9 +15,15 @@
 
 .block-icon {
 	width 			: 37px;
+	height 			: 37px;
 	display 		: inline-block;
 	vertical-align 	: top;
 	fill 			: $color__svg-sidebar;
+
+	svg {
+		max-width 	: 37px;
+		max-height 	: 37px;
+	}
 }
 
 .block-title {
@@ -40,6 +46,7 @@
 	line-height 	: 0.9em;
 	display 		: inline-block;
 	vertical-align 	: top;
+	margin-left 	: 0.25em;
 }
 
 $icons: contact, calendar_sub, lunch, news, forms;

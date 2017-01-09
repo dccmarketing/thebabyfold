@@ -12,67 +12,89 @@
 	}
 
 	ul {
-		list-style	: none;
-		margin		: 0;
-		display 	: inline;
+		@extend %listreset;
+		display 	: none;
 		text-align 	: left;
 
 		@media only screen and (min-width: $bp__menu-button+1) {
-			float: right;
+			float 	: right;
+			display : block;
 		}
 
 		ul {
 			display		: inherit;
 			background	: $color__bg-menu-item-mobile;
 
-			@media only screen and (min-width: $bp__menu-button+1) {	
+			@media only screen and (min-width: $bp__menu-button+1) {
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
-				float		: left;
 				position	: absolute;
-				top			: 2.5em;
-				left		: -999em;
+				left		: 0;
 				z-index		: 99999;
-
-				ul {
-					left: -999em;
-					top	: 0;
-				}
-
-				li {
-					&:hover > ul {
-						left: 100%;
-					}
-				}
-
-				a {
-					color: $color__text-submenu;
-					border-left: none;
-				}
+				transition 	: visibility 0s ease 0.3s,opacity 0.3s ease;
+				visibility 	: hidden;
+				opacity 	: 0;
+				left 		: 0;
 			} // breakpoint
 
 			ul {
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					left: 100%;
+					top	: 0;
+				}
+
 				a {
 					@media only screen and (max-width: $bp__menu-button) {
-						padding: 0.5em 3em;
-						border-left: none;
+						padding 	: 0.5em 3em;
+						border-left : none;
+					}
+				}
+			}
+
+			li {
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					width 			: 100%;
+				}
+
+				&:last-child {
+					border-bottom: none;
+
+					@media only screen and (max-width: $bp__menu-button) {
+						padding-bottom: 0;
+					}
+				}
+
+				a:after {
+					content: "";
+				}
+
+				&:hover {
+
+					> a {
+						color: $yellow;
+					}
+
+					> ul {
+
+						@media only screen and (min-width: $bp__menu-button+1) {
+							left: 100%;
+							top : 0;
+						}
 					}
 				}
 			}
 
 			a {
-				@media only screen and (max-width: $bp__menu-button) {
-					padding: 0.5em 2em;
-				}
+				padding: 0.5em 2em;
 
 				@media only screen and (min-width: $bp__menu-button+1) {
-					width: 200px;
+					padding 	: 0.5em;
+					color 		: $color__text-submenu;
+					border-left : none;
+					white-space : nowrap;
+					min-width 	: 175px;
 				}
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
 			}
 
 			li {
@@ -91,8 +113,8 @@
 		}
 	}
 	li {
-		
-		@media only screen and (min-width: $bp__menu-button+1) {	
+
+		@media only screen and (min-width: $bp__menu-button+1) {
 			float	 	: left;
 			position 	: relative;
 			padding 	: 0.5em 0;
@@ -114,14 +136,22 @@
 			> ul {
 
 				@media only screen and (min-width: $bp__menu-button+1) {
-					display: block;
+					display 	: block;
+					visibility 	: visible;
+					opacity 	: 1;
+					display 	: block;
+					top 		: 2.7em;
 				}
 			}
+		}
+
+		&:not(.menu-item-has-children) {
+			padding-top: calc( 0.5em + 3px );
 		}
 	}
 
 	.nav-menu + .menu-item {
-		
+
 	}
 
 	a {
@@ -157,7 +187,14 @@
 			border-left: none;
 		}
 	}
-}
+
+	&.toggled {
+
+		.nav-menu {
+			@extend %menutoggle;
+		}
+	}
+}// .main-nav
 
 // Center Menu
 .menu-main-menu-container {
@@ -166,47 +203,21 @@
 	text-align	: center;
 }
 
-
 /* Small menu */
 .menu-toggle {
-	display: none;
-}
+	@extend %menutoggle;
+	background		: $color__bg-menu-button;
 
-@media screen and (max-width: $bp__laptop) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display			: block;
-		width			: 100%;
-		border			: none;
-		line-height		: 1.25em;
-		font-size		: 1.25em;
-		box-shadow		: none;
-		border-radius	: 0;
-		text-shadow		: none;
+	&:hover,
+	&:active,
+	&:focus {
 		background		: $color__bg-menu-button;
-		color 			: $color__text-menu-button;
-
-		&:hover {
-			border		: none;
-			box-shadow	: none;
-		}
 	}
 
-	.main-navigation ul {
-		display: none;
-	}
-}
-
-@media screen and (min-width: $bp__tablet+1) and (max-width: $bp__laptop) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		z-index: 9999;		
-	}
-
-	.menu-main-container {
-		position: absolute;
-		z-index: 9999;
-		width: 272px;
+	@media only screen and (min-width: $bp__laptop) {
+		display 	: none;
+		background 	: $color__bg-menu-button;
+		color 		: $color__text-menu-button;
 	}
 }
 
@@ -230,4 +241,36 @@
 	float		: right;
 	text-align	: right;
 	width		: 50%;
+}
+
+.menu-item-has-children {
+
+	> a:after {
+		font-family : dashicons;
+		position 	: relative;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			margin-left : 0.25em;
+			top 		: 3px;
+		}
+
+		.nav-menu & {
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				content: "\f347"; // down chevron
+			}
+
+		}
+
+		.sub-menu & {
+			float 		: right;
+			position 	: relative;
+			top 		: 50%;
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				content 	: "\f345"; // right chevron
+				margin-right: 0.25em;
+			}
+		}
+	}
 }
